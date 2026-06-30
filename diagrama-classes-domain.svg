@@ -1,0 +1,113 @@
+<svg viewBox="0 0 780 560" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Courier New', monospace" font-size="12">
+  <title>Diagrama de Classes UML - Camada Domain</title>
+  <desc>Diagrama UML mostrando Pessoa (abstrata), Aluno, Professor e Disciplina com herança e associação</desc>
+
+  <defs>
+    <marker id="arrow-inherit" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <polygon points="1,1 11,6 1,11" fill="white" stroke="#1a1a2e" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrow-assoc" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polyline points="1,1 9,5 1,9" fill="none" stroke="#555" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="560" fill="white"/>
+
+  <!-- ============ PESSOA (abstract) ============ -->
+  <g id="Pessoa">
+    <rect x="270" y="20" width="240" height="30" fill="#2563eb" opacity="0.9"/>
+    <text x="390" y="40" text-anchor="middle" fill="white" font-weight="bold" font-size="11">«abstract» Pessoa</text>
+    <rect x="270" y="50" width="240" height="95" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="282" y="68" fill="#1a1a2e">- id: int</text>
+    <text x="282" y="84" fill="#1a1a2e">- nome: String</text>
+    <text x="282" y="100" fill="#1a1a2e">- email: String</text>
+    <text x="282" y="116" fill="#1a1a2e">- telefone: String</text>
+    <line x1="270" y1="145" x2="510" y2="145" stroke="#c7d0e0" stroke-width="1"/>
+    <rect x="270" y="145" width="240" height="55" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="282" y="163" fill="#555">+ apresentar(): String</text>
+    <text x="282" y="179" fill="#555">+ toString(): String</text>
+    <text x="282" y="195" fill="#555">+ getters / setters</text>
+    <rect x="270" y="20" width="240" height="180" rx="2" fill="none" stroke="#c7d0e0" stroke-width="1.5"/>
+  </g>
+
+  <!-- ============ ALUNO ============ -->
+  <g id="Aluno">
+    <rect x="40" y="320" width="240" height="30" fill="#0ea5e9" opacity="0.85"/>
+    <text x="160" y="340" text-anchor="middle" fill="white" font-weight="bold" font-size="11">Aluno</text>
+    <rect x="40" y="350" width="240" height="85" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="52" y="368" fill="#1a1a2e">- matricula: String</text>
+    <text x="52" y="384" fill="#1a1a2e">- curso: String</text>
+    <text x="52" y="400" fill="#1a1a2e">- coeficienteRendimento: double</text>
+    <line x1="40" y1="435" x2="280" y2="435" stroke="#c7d0e0" stroke-width="1"/>
+    <rect x="40" y="435" width="240" height="70" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="52" y="453" fill="#555">+ Aluno()</text>
+    <text x="52" y="469" fill="#555">+ Aluno(id,nome,email,tel,mat,cur)</text>
+    <text x="52" y="485" fill="#555">+ Aluno(..., cr: double)  «overload»</text>
+    <rect x="40" y="320" width="240" height="185" rx="2" fill="none" stroke="#c7d0e0" stroke-width="1.5"/>
+    <rect x="40" y="510" width="240" height="30" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="52" y="529" fill="#555">+ apresentar() «override»</text>
+  </g>
+
+  <!-- ============ PROFESSOR ============ -->
+  <g id="Professor">
+    <rect x="500" y="320" width="240" height="30" fill="#0ea5e9" opacity="0.85"/>
+    <text x="620" y="340" text-anchor="middle" fill="white" font-weight="bold" font-size="11">Professor</text>
+    <rect x="500" y="350" width="240" height="85" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="512" y="368" fill="#1a1a2e">- registro: String</text>
+    <text x="512" y="384" fill="#1a1a2e">- especialidade: String</text>
+    <text x="512" y="400" fill="#1a1a2e">- salario: double</text>
+    <line x1="500" y1="435" x2="740" y2="435" stroke="#c7d0e0" stroke-width="1"/>
+    <rect x="500" y="435" width="240" height="70" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="512" y="453" fill="#555">+ Professor()</text>
+    <text x="512" y="469" fill="#555">+ Professor(id,nome,email,tel,reg,esp)</text>
+    <text x="512" y="485" fill="#555">+ Professor(..., salario: double) «overload»</text>
+    <rect x="500" y="320" width="240" height="185" rx="2" fill="none" stroke="#c7d0e0" stroke-width="1.5"/>
+    <rect x="500" y="510" width="240" height="30" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="512" y="529" fill="#555">+ apresentar() «override»</text>
+  </g>
+
+  <!-- ============ DISCIPLINA ============ -->
+  <g id="Disciplina">
+    <rect x="270" y="320" width="210" height="30" fill="#2563eb" opacity="0.7"/>
+    <text x="375" y="340" text-anchor="middle" fill="white" font-weight="bold" font-size="11">Disciplina</text>
+    <rect x="270" y="350" width="210" height="70" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="282" y="368" fill="#1a1a2e">- id: int</text>
+    <text x="282" y="384" fill="#1a1a2e">- nome: String</text>
+    <text x="282" y="400" fill="#1a1a2e">- cargaHoraria: int</text>
+    <text x="282" y="416" fill="#1a1a2e">- professor: Professor</text>
+    <line x1="270" y1="420" x2="480" y2="420" stroke="#c7d0e0" stroke-width="1"/>
+    <rect x="270" y="420" width="210" height="55" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1.2"/>
+    <text x="282" y="438" fill="#555">+ Disciplina(id, nome, ch)</text>
+    <text x="282" y="454" fill="#555">+ Disciplina(id, nome, ch, prof)</text>
+    <text x="282" y="470" fill="#555">  «overload»</text>
+    <rect x="270" y="320" width="210" height="155" rx="2" fill="none" stroke="#c7d0e0" stroke-width="1.5"/>
+  </g>
+
+  <!-- ============ SETAS HERANÇA ============ -->
+  <line x1="160" y1="320" x2="160" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="160" y1="270" x2="270" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="620" y1="320" x2="620" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="620" y1="270" x2="510" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="270,200 286,208 270,216" fill="white" stroke="#1a1a2e" stroke-width="1.3"/>
+  <polygon points="510,200 494,208 510,216" fill="white" stroke="#1a1a2e" stroke-width="1.3"/>
+
+  <!-- ============ ASSOCIAÇÃO Disciplina -> Professor ============ -->
+  <line x1="480" y1="390" x2="500" y2="380" stroke="#777" stroke-width="1.3" stroke-dasharray="6,3" marker-end="url(#arrow-assoc)"/>
+
+  <!-- ============ LABELS ============ -->
+  <text x="185" y="285" fill="#555" font-size="10" font-style="italic">extends</text>
+  <text x="530" y="285" fill="#555" font-size="10" font-style="italic">extends</text>
+  <text x="481" y="372" fill="#555" font-size="10" font-style="italic">0..1</text>
+
+  <!-- ============ LEGENDA ============ -->
+  <rect x="18" y="20" width="230" height="80" rx="4" fill="#f4f6fb" stroke="#c7d0e0" stroke-width="1"/>
+  <text x="28" y="38" fill="#1a1a2e" font-weight="bold" font-size="11">Legenda</text>
+  <line x1="28" y1="50" x2="58" y2="50" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="58,44 70,50 58,56" fill="white" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="76" y="54" fill="#1a1a2e" font-size="10">Herança</text>
+  <line x1="28" y1="70" x2="68" y2="70" stroke="#777" stroke-width="1.3" stroke-dasharray="5,3"/>
+  <polyline points="60,65 70,70 60,75" fill="none" stroke="#777" stroke-width="1.2"/>
+  <text x="76" y="74" fill="#1a1a2e" font-size="10">Associação</text>
+  <rect x="28" y="82" width="10" height="10" fill="#2563eb" opacity="0.85"/>
+  <text x="44" y="91" fill="#1a1a2e" font-size="10">Classe / Abstrata</text>
+</svg>
